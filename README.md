@@ -2,10 +2,6 @@
 
 A **Retrieval-Augmented Generation (RAG) application** built with Python and LangChain that allows an AI system to retrieve relevant information from a document knowledge base and generate accurate and context-aware responses.
 
-Instead of relying only on the knowledge stored inside an LLM, this project follows a pipeline where documents are loaded, processed, converted into embeddings, stored in a vector database, retrieved based on the user's query and finally provided to the language model as context.
-
----
-
 ## 📌 What is RAG?
 
 **Retrieval-Augmented Generation (RAG)** is a technique that combines:
@@ -100,117 +96,7 @@ Gen-AI-Rag_Application/
     └── Project documentation
 ```
 
----
-
-## 🔄 How the Application Works
-
-The application follows a standard RAG pipeline.
-
-### 1. Document Loading
-
-The application first loads the required documents from the knowledge source.
-
-```text
-Documents
-   ↓
-Document Loader
-```
-
-The loader converts the documents into a format that can be processed by the RAG pipeline.
-
----
-
-### 2. Text Splitting
-
-Large documents are divided into smaller chunks.
-
-```text
-Large Document
-      ↓
- Text Splitter
-      ↓
- ┌──────┬──────┬──────┬──────┐
- │Chunk1│Chunk2│Chunk3│Chunk4│
- └──────┴──────┴──────┴──────┘
-```
-
-Chunking makes it easier for the retrieval system to find the most relevant pieces of information.
-
----
-
-### 3. Creating Embeddings
-
-Each text chunk is converted into a numerical vector using an embedding model.
-
-```text
-Text Chunk
-    ↓
-Embedding Model
-    ↓
-Vector Representation
-```
-
-These vectors capture the semantic meaning of the text.
-
----
-
-### 4. Storing Vectors
-
-The generated embeddings are stored inside the project's vector store.
-
-```text
-Document Chunks
-      ↓
-   Embeddings
-      ↓
- Vector Store
-```
-
-This allows the application to perform semantic similarity searches.
-
----
-
-### 5. Query Processing
-
-When a user asks a question, the query is also converted into an embedding.
-
-```text
-User Question
-      ↓
-Embedding Model
-      ↓
-Query Vector
-```
-
----
-
-### 6. Retrieval
-
-The retriever compares the query vector with stored document vectors and finds the most relevant chunks.
-
-```text
-Query Vector
-     ↓
-Vector Search
-     ↓
-Relevant Documents
-```
-
----
-
-### 7. Generation
-
-The retrieved information is passed to the language model as context.
-
-```text
-User Question
-      +
-Retrieved Context
-      ↓
-     LLM
-      ↓
-Generated Answer
-```
+ 🔄 How the Application Works
 
 ## 📥 Clone the Repository
 
@@ -321,16 +207,12 @@ Planned improvements for this project may include:
 This project demonstrates practical understanding of:
 
 * Retrieval-Augmented Generation
-* Large Language Models
 * Embeddings
 * Vector databases
 * Semantic search
 * Document processing
 * Information retrieval
 * LangChain
-* Streamlit
-* Python application development
-
 ---
 
 ## 👨‍💻 Author
